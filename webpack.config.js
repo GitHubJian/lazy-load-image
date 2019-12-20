@@ -12,7 +12,7 @@ module.exports = {
     filename: '[name]-' + version + '.min.js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
-    library: '[name]',
+    library: 'Lazyload',
     libraryTarget: 'window'
   },
   resolve: {

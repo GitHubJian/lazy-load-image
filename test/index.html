@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <div>
+      <img
+        class="lazyload"
+        data-src="http://img01.sogoucdn.com/app/a/200883/ec946bb5f70d5c5c4148e1bd39147034"
+      />
+    </div>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <img class="lazyload" data-src="abc" />
+
+    <div id="wrapper"></div>
+    <script src="/dist/lazyload-1.0.0.min.js"></script>
+    <script>
+      var lazyload = new window.Lazyload({
+        convert: function(src) {
+          if (src.indexOf('http:') == 0) {
+            src = src.substring(5)
+          }
+
+          return src
+        }
+      })
+    </script>
+
+    <script>
+      setTimeout(function() {
+        var wrapper = document.getElementById('wrapper')
+
+        var image = new Image()
+        image.src =
+          'http://img01.sogoucdn.com/v2/thumb/crop/xy/ai/w/224/h/144/t/0/retype/q/80/ext/auto?appid=200576&url=http%3A%2F%2Fimg01.sogoucdn.com%2Fapp%2Fa%2F200883%2Facd944199d6e9157477155acae8483ce'
+
+        wrapper.appendChild(image)
+
+        lazyload.traversal()
+      }, 1e3)
+    </script>
+  </body>
+</html>
